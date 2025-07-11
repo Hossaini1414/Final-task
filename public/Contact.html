@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home </title>
+  <link rel="stylesheet" href="assets/css/build/tailwind.css">
+  <!--Font Awesome CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .bg-custom {
+      background-image: url('bg9.jpg');
+    }
+  </style>
+  <link rel="stylesheet" href="font/font.css">
+
+</head>
+
+<body class="mx-auto font-font8 bg-slate-100">
+  <!-- navabar -->
+  <div class="h-[500px]   mx-auto bg-custom bg-cover bg-center ">
+
+    <div dir="ltf" class=" bg-gray-800 bg-opacity-60  h-10  flex-row   
+      flex items-center justify-between  mx-auto w-full">
+      <!--mobile_menu icon-->
+      <div class="md:hidden p-3  ">
+        <button onclick="openMenu()">
+          <img src="menu.png" class="w-10 h-8" alt="menu" />
+        </button>
+      </div>
+      <!--date-->
+      <div class="md:text-sm text-xs text-slate-100 p-2 pl-5 font-sans">
+        <span><i class="fas fa-clock text-white"></i> Mon-Sat 10.am-07:30pm.Sunday CLOSED</span>
+      </div>
+      <img src="logo.png" class="w-20 hidden md:flex ">
+
+      <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="closeMenu()"></div>
+      <!--computer_menu-->
+      <div class=" md:flex items-center  hidden pr-6 ">
+        <div class="flex gap-7 font-medium  text-white"">
+          <a href=" www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i></a>
+          <a href="www.twitter.com"> <i class="fab fa-twitter    text-white"> </i></a>
+          <a href="www.instagram.com"><i class="fab fa-instagram  text-white"> </i></a>
+          <a href="www.linkdin.com"> <i class="fab fa-linkedin   text-white"> </i></a>
+          <a href="www.pintrest.com"> <i class="fab fa-pinterest  text-white"> </i></a>
+          <a href="www.youtube.com"> <i class="fab fa-youtube    text-white"> </i></a>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div id="mobileMenu"
+        class="hidden fixed  top-10  left-0 w-2/3 h-full  bg-gray-800  p-6 z-50 shadow-lg md:hidden overflow-y-auto transform transition-transform duration-300 rounded-r-xl bg-opacity-90 -translate-x-full font-sans">
+
+        <!-- close Btn -->
+        <div class="flex flex-row justify-between text-white ">
+          <div>
+            <img src="logo.png" class="w-16 ">
+          </div>
+          <div class="text-left ">
+            <button onclick="closeMenu()" class="text-white text-5xl ">×</button>
+          </div>
+        </div>
+        <div class=" md:flex text-left   pt-5  text-white">
+          <div class="flex flex-col gap-3 font-medium">
+            <a href="Home.html"><i class="fas fa-home  text-white"></i> Home </a>
+            <hr>
+            <a href="Post.html"><i class="fas fa-comments  text-white"> </i> Posts </a>
+            <hr>
+            <a href="Login.html"> <i class="fas fa-lock text-white"> </i> Login </a>
+            <hr>
+            <a href="SignUp.html"> <i class="fas fa-user text-white"></i> Sign Up </a>
+            <hr>
+            <a href="AboutUs.html"><i class="fas fa-building  text-white"> </i> About Us </a>
+            <hr>
+            <a href="Cotact.html"><i class="fas fa-headset  text-white"> </i> Contact Us </a>
+            <hr>
+            <a href="www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i> Facebook</a>
+            <hr>
+            <a href="www.twitter.com"> <i class="fab fa-twitter    text-white"> </i> Twitter</a>
+            <hr>
+            <a href="www.instagram.com"><i class="fab fa-instagram  text-white"> </i> Instagram</a>
+            <hr>
+            <a href="www.linkdin.com"> <i class="fab fa-linkedin   text-white"> </i> Linkdin</a>
+            <hr>
+            <a href="www.pintrest.com"> <i class="fab fa-pinterest  text-white"> </i> Pinterest</a>
+            <hr>
+            <a href="www.youtube.com"> <i class="fab fa-youtube    text-white"> </i> Youtube</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bg-transparent mt-6 flex flex-row gap-3  md:gap-40  mx-auto text-center justify-center">
+      <!--left menu-->
+      <div class="md:flex flex-row gap-3 md:gap-6 text-white pt-4 hidden">
+        <a href="Home.html"><i class="fas fa-home  text-white"></i> Home</a>
+        <span class="text-center text-white text-lg">/</span>
+        <a href="AboutUs.html"><i class="fas fa-building  text-white"> </i> About Us</a>
+        <span class="text-center text-white text-lg">/</span>
+        <a href="Contact.html"><i class="fas fa-headset  text-white"> </i> Contact Us</a>
+      </div>
+
+      <!--logo-->
+      <div>
+        <h1 class="md:text-6xl text-4xl font-font2  text-white"> Tafri Travel</h1>
+      </div>
+
+      <!--right menu-->
+      <div class="md:flex flex-row gap-3 md:gap-6 text-white pt-4 hidden">
+        <a href="Post.html"><i class="fas fa-comments  text-white"> </i> Posts</a>
+        <span class="text-center text-white text-sm md:text-lg">/</span>
+        <a href="Login.html"> <i class="fas fa-lock text-white"> </i> Login </a>
+        <span class="text-center text-white text-sm md:text-lg">/</span>
+        <a href="SignUp.html"><i class="fas fa-user text-white"></i> Sign Up</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col  text-white  mx-auto text-center mt-40 md:mt-36 ">
+      <div class="text-white text-4xl md:text-6xl font-serif">
+        <h1 class="font-font4"> Your Journey Begins</h1>
+      </div>
+      <hr class="w-24 h-2  mx-auto  mt-7  md:border-t-4 border-t-2 border-white">
+      <div class="text-white md:text-lg text-sm font-sans mb-6">
+        <p class="font-semibold">Lrem lqsum dummy text of the printhing and typesetting.</p>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+  <!-- section 2-->
+  <div class="flex flex-col bg-slate-100 mx-auto justify-center items-center">
+
+    <div class="flex items-center justify-center mt-6">
+      <div class="flex items-center space-x">
+        <div class="h-px w-20 md:w-96 bg-cyan-400"></div>
+        <div class="h-4 w-0.5 bg-cyan-300"></div>
+      </div>
+
+      <span class="px-4 text-lg italic font-font5 text-gray-800 whitespace-nowrap ">
+        Contact Us
+      </span>
+
+      <div class="flex items-center space-x">
+        <div class="h-4 w-0.5 bg-cyan-300"></div>
+        <div class="h-px md:w-96 w-20 bg-cyan-400"></div>
+      </div>
+    </div>
+
+    <!--Form-->
+    <div
+      class="md:grid md:grid-cols-2   gap-3 md:gap-0 shadow-cyan-700 md:shadow-2xl mt-10  justify-center items-center md:h-['450px']  rounded-2xl mb-4">
+      <div
+        class="p-8 md:rounded-l-xl md:shadow-2xl  items-center mx-auto w-full h-full  overflow-hidden pt-10 md:bg-white">
+        <img src="logo.png" class="w-40 mx-auto" />
+        <img src="icon4.png" class=" w-96 mx-auto" />
+
+      </div>
+      <div
+        class="p-8 rounded-2xl md:rounded-r-xl  shadow-cyan-700  shadow-xl md:shadow-none w-full h-full  overflow-hidden pt-10 bg-gray-100">
+        <h1 class="p-4 text-2xl font-bold font-['georgia'] text-center text-gray-600">
+          Get in touch whih Us
+        </h1>
+        <p class="text-center text-md text-gray-700 mb-6">
+          Hove any questions, feedback, or just want to say hello?<br>
+          Fill out the form below and we1'll get back to you as soon as possible.
+        </p>
+        <form id="loginForm" method="post" action="https://formsubmit.co/khodabakhsh.hosseine.20@gmail.com">
+          <input type="hidden" name="_captcha" value="false">
+          <!--after send massage user go here-->
+          <input type="hidden" name="_next" value="thankYou.html">
+
+          <label class="block text-lg font-medium text-gray-700 mb-1"><i class="fas fa-user text-black"> </i> User
+            Name</label>
+          <input type="text" placeholder="user name...." required
+            class="w-full bg-transparent  bg-stone-50 px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-500" />
+          <label class="block text-lg font-medium text-gray-700 mb-1"><i class="fas fa-envelope text-black"> </i>
+            Email</label>
+          <input type="email" i placeholder="email....." required
+            class="w-full bg-transparent  bg-stone-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-500" />
+          <label class="block text-lg font-medium text-gray-700 mb-1 my-3"><i class="fas fa-question text-black"> </i>
+            Your questions</label>
+          <textarea placeholder="Write your questions or idea..." required
+            class="w-full h-32 p-3  border border-gray-300 bg-stone-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+
+          <br>
+          <div class="grid grid-cols-2 gap-6 my-6">
+            <button type="submit" class="bg-cyan-300  rounded-lg hover:bg-cyan-400 p-2  hover: scale-105">
+              Send
+            </button>
+            <button type="submit" class="bg-gray-400  rounded-lg hover:bg-gray-500 p-2 hover: scale-105">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="bg-cyan-400">
+    <!-- main div -->
+    <div class="flex flex-row justify-center items-center  mx-auto mt-10 px-2 md:px-10 bg-cyan-400">
+      <!-- part 1-->
+      <!-- logo -->
+      <div class="container  ">
+        <img src="logo.png" class="pb-10 w-44 mx-auto" alt="Logo" />
+      </div>
+
+
+      <!-- part 2 -->
+      <div class="container mx-auto  ">
+        <h5 class="font-bold text-lg md:text-xl py-2  ">More info</h5>
+        <div class="flex flex-col gap-1 font-medium mx-auto text-sm md:text-lg">
+          <a href="Home.html"><i class="fas fa-home      "></i> Home </a>
+          <a href="Post.html"><i class="fas fa-comments   "></i> Posts </a>
+          <a href="login.html"> <i class="fas fa-lock     "> </i> Login </a>
+          <a href="SignUp.html"> <i class="fas fa-user    "></i> Sign Up </a>
+          <a href="AboutUs.html"><i class="fas fa-building"></i> About Us </a>
+          <a href="Contact.html"><i class="fas fa-headset "></i> Contact Us </a>
+        </div>
+      </div>
+      <!-- part 3 -->
+      <div class="container flex flex-col gap-1 text-sm md:text-xl">
+        <h5 class="font-extrabold text-xl md:text-md py-2 ">Social media</h5>
+        <a href="www.facebook.com"> <i class="fab fa-facebook-f"> </i> facebook</a>
+        <a href="www.twitter.com"> <i class="fab fa-twitter   "> </i> Twitter</a>
+        <a href="www.instagram.com"><i class="fab fa-instagram"> </i> Instagram</a>
+        <a href="www.linkdin.com"> <i class="fab fa-linkedin  "> </i> Linkedin</a>
+        <a href="www.pintrest.com"> <i class="fab fa-pinterest"> </i> Pinterest</a>
+        <a href="www.youtube.com"> <i class="fab fa-youtube   "> </i> Youtube</a>
+      </div>
+    </div>
+    <hr class="mx-3 text-black">
+    <div class="md:text-sm text-xs text-center pt-2">
+      <p>© 2025 <a href="https://yourwebsite.com">tafriTravel.com</a>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+
+    // mobile menu
+
+    function openMenu() {
+      document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
+      document.getElementById("overlay").classList.remove("hidden");
+    }
+
+    function closeMenu() {
+      document.getElementById("mobileMenu").classList.add("-translate-x-full");
+      setTimeout(() => {
+        document.getElemuentById("mobileMenu").classList.add("hidden");
+      }, 300);
+      document.getElementById("overlay").classList.add("hidden");
+    }
+
+  </script>
+
+</body>
+
+</html>

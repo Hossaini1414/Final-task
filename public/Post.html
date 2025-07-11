@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="assets/css/build/tailwind.css">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-custom {
+            background-image: url('bg9.jpg');
+        }
+    </style>
+    <link rel="stylesheet" href="font/font.css">
+</head>
+
+<body class="mx-auto font-font8 w-full bg-slate-100">
+    <!-- navabar -->
+    <div class="h-[500px]   mx-auto bg-custom bg-cover bg-center ">
+
+        <div dir="ltf"
+            class=" bg-gray-800 bg-opacity-60  h-10  flex-row flex items-center justify-between  mx-auto w-full">
+            <!--mobile_menu icon-->
+            <div class="md:hidden p-3  ">
+                <button onclick="openMenu()">
+                    <img src="menu.png" class="w-10 h-8" alt="menu" />
+                </button>
+            </div>
+            <!--date-->
+            <div class="md:text-sm text-xs text-slate-100 p-2 pl-5 font-sans">
+                <span><i class="fas fa-clock text-white"></i> Mon-Sat 10.am-07:30pm.Sunday CLOSED</span>
+            </div>
+            <img src="logo.png" class="w-20 hidden md:flex ">
+
+            <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="closeMenu()"></div>
+            <!--computer_menu-->
+            <div class=" md:flex items-center  hidden pr-6 ">
+                <div class="flex gap-7 font-medium  text-white"">
+                    <a href=" www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i></a>
+                    <a href="www.twitter.com"> <i class="fab fa-twitter    text-white"> </i></a>
+                    <a href="www.instagram.com"><i class="fab fa-instagram  text-white"> </i></a>
+                    <a href="www.linkdin.com"> <i class="fab fa-linkedin   text-white"> </i></a>
+                    <a href="www.pintrest.com"> <i class="fab fa-pinterest  text-white"> </i></a>
+                    <a href="www.youtube.com"> <i class="fab fa-youtube    text-white"> </i></a>
+                </div>
+            </div>
+            <!-- mobile menu -->
+            <div id="mobileMenu"
+                class="hidden fixed  top-10  left-0 w-2/3 h-full  bg-gray-800  p-6 z-50 shadow-lg md:hidden overflow-y-auto transform transition-transform duration-300 rounded-r-xl bg-opacity-90 -translate-x-full font-sans">
+
+                <!-- close Btn -->
+                <div class="flex flex-row justify-between text-white ">
+                    <div>
+                        <img src="logo.png" class="w-16 ">
+                    </div>
+                    <div class="text-left ">
+                        <button onclick="closeMenu()" class="text-white text-5xl ">×</button>
+                    </div>
+                </div>
+                <div class=" md:flex text-left   pt-5  text-white">
+                    <div class="flex flex-col gap-3 font-medium">
+                        <a href="Home.html"><i class="fas fa-home  text-white"> </i> Home </a>
+                        <hr>
+                        <a href="Post.html"><i class="fas fa-comments  text-white"> </i> Posts </a>
+                        <hr>
+                        <a href="login.html"> <i class="fas fa-lock text-white"> </i> Login </a>
+                        <hr>
+                        <a href="signUp.html"> <i class="fas fa-user text-white"></i> Sign Up </a>
+                        <hr>
+                        <a href="AboutUs.html"><i class="fas fa-building  text-white"> </i> About Us </a>
+                        <hr>
+                        <a href="Contact.html"> <i class="fas fa-headset  text-white"> </i> Contact Us </a>
+                        <hr>
+                        <a href="www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i> Facebook</a>
+                        <hr>
+                        <a href="www.twitter.com"> <i class="fab fa-twitter    text-white"> </i> Twitter</a>
+                        <hr>
+                        <a href="www.instagram.com"><i class="fab fa-instagram  text-white"> </i> Instagram</a>
+                        <hr>
+                        <a href="www.linkdin.com"> <i class="fab fa-linkedin   text-white"> </i> Linkdin</a>
+                        <hr>
+                        <a href="www.pintrest.com"> <i class="fab fa-pinterest  text-white"> </i> Pinterest</a>
+                        <hr>
+                        <a href="www.youtube.com"> <i class="fab fa-youtube    text-white"> </i> Youtube</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-transparent mt-6 flex flex-row gap-3  md:gap-40  mx-auto text-center justify-center">
+            <!--left menu-->
+            <div class="md:flex flex-row gap-3 md:gap-4 text-white pt-4 hidden">
+                <a href="Home.html"><i class="fas fa-home  text-white"></i> Home</a>
+                <span class="text-center text-white text-lg">/</span>
+                <a href="AboutUs.html"><i class="fas fa-building  text-white"></i> About Us</a>
+                <span class="text-center text-white text-lg">/</span>
+                <a href="Contact.html"><i class="fas fa-headset  text-white"></i> Contact Us</a>
+            </div>
+
+            <!--logo-->
+            <div>
+                <h1 class="md:text-6xl text-4xl font-font2  text-white"> Tafri Travel</h1>
+            </div>
+
+            <!--right menu-->
+            <div class="md:flex flex-row gap-3 md:gap-6 text-white pt-4 hidden">
+                <a href="Post.html"><i class="fas fa-comments  text-white"> </i> Posts</a>
+                <span class="text-center text-white text-sm md:text-lg">/</span>
+                <a href="login.html"> <i class="fas fa-lock text-white"> </i> Login </a>
+                <span class="text-center text-white text-sm md:text-lg">/</span>
+                <a href="SignUp.html"><i class="fas fa-user text-white"></i> sign Up</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col  text-white  mx-auto text-center mt-44 md:mt-36 ">
+            <div class="text-white text-4xl md:text-6xl font-serif">
+                <h1 class="font-font4"> Your Journey Begins</h1>
+            </div>
+            <hr class="w-24 h-2  mx-auto  mt-7  md:border-t-4 border-t-2 border-white">
+            <div class="text-white md:text-lg text-sm font-sans">
+                <p class="font-semibold">Lrem lqsum dummy text of the printhing and typesetting.</p>
+            </div>
+        </div>
+        <!--posts section -->
+        <div class="mx-auto text-center my-4 mt-8">
+            <button id="toggleFormBtn"
+                class="w-1/2 md:w-1/5 mx-auto bg-cyan-400 hover:bg-cyan-500 text-white py-2 px-4 rounded-lg transition">
+                ➕ Create new post
+            </button>
+        </div>
+    </div>
+    <!-- section 2-->
+    <div class="flex flex-col mx-auto justify-center items-center">
+        <!-- Title-->
+        <div class="flex items-center justify-center my-6">
+            <div class="flex items-center space-x">
+                <div class="h-px w-20 md:w-96 bg-cyan-400"></div>
+                <div class="h-4 w-0.5 bg-cyan-300"></div>
+            </div>
+
+            <span class="px-4 text-lg md:text-2xl  font-font5 text-gray-800 whitespace-nowrap ">
+                Your Posts
+            </span>
+
+            <div class="flex items-center space-x">
+                <div class="h-4 w-0.5 bg-cyan-300"></div>
+                <div class="h-px md:w-96 w-20 bg-cyan-400"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create post-->
+    <div id="postFormWrapper" class="w-1/2 md:w-1/5 h-60  mx-auto bg-white shadow-md rounded-xl p-2 hidden">
+
+        <form id="postForm" class="space-y-1 ">
+
+            <textarea id="postText" placeholder="Write your post..." required
+                class="w-full h-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+
+            <!--choose image-->
+            <div id="customFileInput"
+                class=" relative w-full h-32 border-2 border-dashed border-gray-400 flex items-center justify-center rounded-lg cursor-pointer text-gray-500 hover:border-blue-500 overflow-hidden bg-white">
+                <span id="uploadText" class="z-10">Click to upload image</span>
+                <img id="imagePreview" class="absolute inset-0 w-full h-full object-cover hidden z-0 " />
+            </div>
+
+            <input type="file" id="postImage" accept="image/*" class="hidden" />
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">📤
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <!-- posts -->
+    <div id="postsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4  md:max-w-3xl mx-auto mt-8 ">
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-cyan-400">
+        <!-- main div -->
+        <div class="flex flex-row justify-center items-center  mx-auto mt-10 px-2 md:px-10 bg-cyan-400">
+            <!-- part 1-->
+            <!-- logo -->
+            <div class="container  ">
+                <img src="logo.png" class="pb-10 w-44 mx-auto" alt="Logo" />
+            </div>
+
+
+            <!-- part 2 -->
+            <div class="container mx-auto  ">
+                <h5 class="font-bold text-lg md:text-xl py-2  ">More info</h5>
+                <div class="flex flex-col gap-1 font-medium mx-auto text-sm md:text-lg">
+                    <a href="Home.html"><i class="fas fa-home      "></i> Home </a>
+                    <a href="Post.html"><i class="fas fa-comments   "></i> Posts </a>
+                    <a href="login.html"> <i class="fas fa-lock     "> </i> Login </a>
+                    <a href="SignUp.html"> <i class="fas fa-user    "></i> Sign Up </a>
+                    <a href="AboutUs.html"><i class="fas fa-building"></i> About Us </a>
+                    <a href="Contact.html"><i class="fas fa-headset "></i> Contact Us </a>
+                </div>
+            </div>
+            <!-- part 3 -->
+            <div class="container flex flex-col gap-1 text-sm md:text-xl">
+                <h5 class="font-extrabold text-xl md:text-md py-2 ">Social media</h5>
+                <a href="www.facebook.com"> <i class="fab fa-facebook-f"> </i> facebook</a>
+                <a href="www.twitter.com"> <i class="fab fa-twitter   "> </i> Twitter</a>
+                <a href="www.instagram.com"><i class="fab fa-instagram"> </i> Instagram</a>
+                <a href="www.linkdin.com"> <i class="fab fa-linkedin  "> </i> Linkedin</a>
+                <a href="www.pintrest.com"> <i class="fab fa-pinterest"> </i> Pinterest</a>
+                <a href="www.youtube.com"> <i class="fab fa-youtube   "> </i> Youtube</a>
+            </div>
+        </div>
+        <hr class="mx-3 text-black">
+        <div class="md:text-sm text-xs text-center pt-2">
+            <p>© 2025 <a href="https://yourwebsite.com">tafriTravel.com</a>. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // mobile menu
+
+        function openMenu() {
+            document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
+            document.getElementById("overlay").classList.remove("hidden");
+        }
+
+        function closeMenu() {
+            document.getElementById("mobileMenu").classList.add("-translate-x-full");
+            setTimeout(() => {
+                document.getElementById("mobileMenu").classList.add("hidden");
+            }, 300);
+            document.getElementById("overlay").classList.add("hidden");
+        }
+
+        const UserName = JSON.parse(localStorage.getItem("user"))?.username;
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        if (!isLoggedIn || !UserName) {
+            alert("please login first");
+            window.location.href = "login.html";
+        }
+        const postFormWrapper = document.getElementById("postFormWrapper");
+        const toggleFormBtn = document.getElementById("toggleFormBtn");
+        const postForm = document.getElementById("postForm");
+        const postsContainer = document.getElementById("postsContainer");
+        const imageInput = document.getElementById("postImage");
+        const customFileInput = document.getElementById("customFileInput");
+        const imagePreview = document.getElementById("imagePreview");
+        const uploadText = document.getElementById("uploadText");
+        const user = JSON.parse(localStorage.getItem("user")) || { username: "Unknown" };
+        const username = user.username;
+
+        let posts = JSON.parse(localStorage.getItem("posts") || "[]");
+        let editingPostId = null;
+
+        // toggle form
+        toggleFormBtn.addEventListener("click", () => {
+            postFormWrapper.classList.toggle("hidden");
+        });
+
+        //  show image in post form
+        customFileInput.addEventListener("click", () => imageInput.click());
+        imageInput.addEventListener("change", () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    imagePreview.src = reader.result;
+                    imagePreview.classList.remove("hidden");
+                    uploadText.classList.add("hidden");
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function timeAgo(timestamp) {
+            const diff = Math.floor((Date.now() - timestamp) / 1000);
+            if (diff < 60) return `${diff} secounds ago`;
+            if (diff < 3600) return `${Math.floor(diff / 60)} minutes ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)} hours ago `;
+            return `${Math.floor(diff / 86400)} days ago`;
+        }
+
+        function renderPost(post) {
+            const postCard = document.createElement("div");
+            postCard.className = "bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col";
+            postCard.setAttribute("data-id", post.id);
+
+            postCard.innerHTML = `
+          <div class="p-4 flex-grow flex flex-col px-6 font-sans">
+        <p class="text-gray-800 text-base break-words line-clamp-4 overflow-hidden">${post.text}</p>
+            ${post.image ? `<img src="${post.image}" class=" h-60 md:h-36  rounded-lg mt-3  object-cover w-full" />` : ""}
+            <div class="text-sm text-gray-500 mt-auto">👤 ${post.username} |  ${timeAgo(post.timestamp)}</div>
+          </div>
+        <div class="flex justify-end gap-2 px-2 py-2  border-t bg-white font-sans">
+        <button class="w-1/2 edit-btn text-white hover:scale-110 text-sm border bg-cyan-400 hover:bg-cyan-500 p-1 px-3 rounded-xl">Edit</button>
+        <button class="w-1/2 delete-btn text-white hover:scale-110 text-sm border bg-red-500 p-1 px-3 rounded-xl">Delete</button>
+        </div>
+        `;
+
+            postsContainer.prepend(postCard);
+        }
+
+        function renderAllPosts() {
+            postsContainer.innerHTML = "";
+            posts.forEach(renderPost);
+        }
+
+        renderAllPosts();
+
+        postForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const text = document.getElementById("postText").value;
+            const imageFile = imageInput.files[0];
+
+            function savePost(imageData = "") {
+                if (editingPostId) {
+                    const post = posts.find(p => p.id === editingPostId);
+                    post.text = text;
+                    if (imageData) post.image = imageData;
+                    post.timestamp = Date.now();
+                    editingPostId = null;
+                    formTitle.textContent = "📝 Create New Post";
+                } else {
+                    const newPost = {
+                        id: Date.now().toString(),
+                        text,
+                        image: imageData,
+                        username,
+                        timestamp: Date.now()
+                    };
+                    posts.push(newPost);
+                }
+
+                localStorage.setItem("posts", JSON.stringify(posts));
+                renderAllPosts();
+                postForm.reset();
+                imagePreview.classList.add("hidden");
+                uploadText.classList.remove("hidden");
+                postFormWrapper.classList.add("hidden");
+            }
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = () => savePost(reader.result);
+                reader.readAsDataURL(imageFile);
+            } else {
+                savePost();
+            }
+        });
+
+        postsContainer.addEventListener("click", (e) => {
+            const postCard = e.target.closest("[data-id]");
+            const postId = postCard?.getAttribute("data-id");
+
+            if (e.target.classList.contains("delete-btn")) {
+                posts = posts.filter(p => p.id !== postId);
+                localStorage.setItem("posts", JSON.stringify(posts));
+                renderAllPosts();
+            }
+
+            if (e.target.classList.contains("edit-btn")) {
+                const post = posts.find(p => p.id === postId);
+                document.getElementById("postText").value = post.text;
+                imagePreview.src = post.image || "";
+                if (post.image) {
+                    imagePreview.classList.remove("hidden");
+                    uploadText.classList.add("hidden");
+                } else {
+                    imagePreview.classList.add("hidden");
+                    uploadText.classList.remove("hidden");
+                }
+                editingPostId = postId;
+                formTitle.textContent = "✏️ Edit Post";
+                postFormWrapper.classList.remove("hidden");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        });
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

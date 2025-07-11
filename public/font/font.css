@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'FontOne';
+    src: url('font1.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font2';
+    src: url('font2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font3';
+    src: url('font3.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font4';
+    src: url('font4.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font5';
+    src: url('font5.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font6';
+    src: url('font6.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font7';
+    src: url('font7.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font8';
+    src: url('font8.ttf') format('truetype');
+}
