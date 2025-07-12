@@ -243,24 +243,28 @@
             document.getElementById("overlay").classList.add("hidden");
         }
         // form
+
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+    // get list of users
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
     
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-        e.preventDefault();
+    const matchedUser = users.find(user => user.username === username && user.password === password);
 
-        const username = document.getElementById('loginUsername').value;
-        const password = document.getElementById('loginPassword').value;
-
-        // get details from localStorage
-        const storedUser = JSON.parse(localStorage.getItem('user'));
-
-        if (storedUser && username === storedUser.username && password === storedUser.password) {
-            localStorage.setItem("loggedIn", "true");
-            window.location.href = "Post.html";
-        } else {
-            alert('Invalid! please try again');
-        }
-    });
-</script>
+    if (matchedUser) {
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "Post.html";
+    } else {
+        alert('Invalid credentials! Please try again.');
+    }
+});
+    </script>
 
 </body>
 
