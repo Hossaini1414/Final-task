@@ -257,6 +257,7 @@ const customFileInput = document.getElementById("customFileInput");
 const imagePreview = document.getElementById("imagePreview");
 const uploadText = document.getElementById("uploadText")
 let editingPostId = null;
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
 
 // toggle form
 toggleFormBtn.addEventListener("click", () => {
