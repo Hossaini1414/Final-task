@@ -248,20 +248,25 @@
             }, 300);
             document.getElementById("overlay").classList.add("hidden");
         }
-        // form
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const email = document.getElementById('email').value;
-            localStorage.setItem('user', JSON.stringify({ username, password, email }));
-            alert('successfully Created your acount');
-            localStorage.setItem("loggedIn", "true");
-            window.location.href = "Post.html";
-        })
+    
+// form
+  document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+      
+    const username = document.getElementById('signupUsername').value;
+    const password = document.getElementById('signupPassword').value;
 
-    </script>
 
+    const user = {
+      username: username,
+      password: password
+    };
+
+    
+    localStorage.setItem('user', JSON.stringify(user));
+    alert("Account created successfully! Please log in.");
+    window.location.href = "Login.html";
+  });
+</script>
 </body>
-
-</html>
+    
