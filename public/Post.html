@@ -369,6 +369,11 @@
                 const post = posts.find(p => p.id === postId);
                 document.getElementById("postText").value = post.text;
                 imagePreview.src = post.image || "";
+                if (!post) {
+                    console.warn("Post not found for ID:", postId);
+                    return;
+                }
+
                 if (post.image) {
                     imagePreview.classList.remove("hidden");
                     uploadText.classList.add("hidden");
@@ -377,11 +382,11 @@
                     uploadText.classList.remove("hidden");
                 }
                 editingPostId = postId;
-                formTitle.textContent = "✏️ Edit Post";
                 postFormWrapper.classList.remove("hidden");
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
         });
+
 
 
 
