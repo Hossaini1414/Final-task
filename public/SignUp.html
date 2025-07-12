@@ -247,29 +247,31 @@
         document.getElementById("overlay").classList.add("hidden");
     }
 
-    // form
+    // ثبت‌نام کاربر
     document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('signupForm').addEventListener('submit', function (e) {
-        e.preventDefault();
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
+            let users = JSON.parse(localStorage.getItem('users')) || [];
 
-        const existingUser = users.find(user => user.username === username);
-        if (existingUser) {
-            alert('This username already exists!');
-            return;
-        }
+            // بررسی نام کاربری تکراری
+            const existingUser = users.find(user => user.username === username);
+            if (existingUser) {
+                alert('This username already exists!');
+                return;
+            }
 
-        users.push({ username, password });
-        localStorage.setItem('users', JSON.stringify(users));
+            users.push({ username, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
 
-        alert("Account created successfully! Please log in.");
-        window.location.href = "Login.html";
+            alert("Account created successfully! Please log in.");
+            window.location.href = "Login.html";
+        });
     });
-});
 </script>
 </body>
     
