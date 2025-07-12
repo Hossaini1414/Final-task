@@ -39,12 +39,12 @@
             <!--computer_menu-->
             <div class=" md:flex items-center  hidden pr-6 ">
                 <div class="flex gap-7 font-medium  text-white"">
-                    <a href=" www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i></a>
-                    <a href="www.twitter.com"> <i class="fab fa-twitter    text-white"> </i></a>
-                    <a href="www.instagram.com"><i class="fab fa-instagram  text-white"> </i></a>
-                    <a href="www.linkdin.com"> <i class="fab fa-linkedin   text-white"> </i></a>
-                    <a href="www.pintrest.com"> <i class="fab fa-pinterest  text-white"> </i></a>
-                    <a href="www.youtube.com"> <i class="fab fa-youtube    text-white"> </i></a>
+                    <a href=" https://www.facebook.com"> <i class="fab fa-facebook-f text-white"> </i></a>
+                    <a href="https://www.twitter.com"> <i class="fab fa-twitter    text-white"> </i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram  text-white"> </i></a>
+                    <a href="https://www.linkedin.com"> <i class="fab fa-linkedin   text-white"> </i></a>
+                    <a href="https://www.pinerest.com"> <i class="fab fa-pinterest  text-white"> </i></a>
+                    <a href="https://www.youtube.com"> <i class="fab fa-youtube    text-white"> </i></a>
                 </div>
             </div>
             <!-- mobile menu -->
@@ -211,12 +211,12 @@
             <!-- part 3 -->
             <div class="container flex flex-col gap-1 text-sm md:text-xl">
                 <h5 class="font-extrabold text-xl md:text-md py-2 ">Social media</h5>
-                <a href="www.facebook.com"> <i class="fab fa-facebook-f"> </i> facebook</a>
-                <a href="www.twitter.com"> <i class="fab fa-twitter   "> </i> Twitter</a>
-                <a href="www.instagram.com"><i class="fab fa-instagram"> </i> Instagram</a>
-                <a href="www.linkdin.com"> <i class="fab fa-linkedin  "> </i> Linkedin</a>
-                <a href="www.pintrest.com"> <i class="fab fa-pinterest"> </i> Pinterest</a>
-                <a href="www.youtube.com"> <i class="fab fa-youtube   "> </i> Youtube</a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://www.twitter.com"> <i class="fab fa-twitter "> </i>Twitter</a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i> Pinterest</a>
             </div>
         </div>
         <hr class="mx-3 text-black">
@@ -227,6 +227,21 @@
 
 
 <script>
+
+    // mobile menu
+    function openMenu() {
+        document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
+        document.getElementById("overlay").classList.remove("hidden");
+    }
+
+    function closeMenu() {
+        document.getElementById("mobileMenu").classList.add("-translate-x-full");
+        setTimeout(() => {
+            document.getElementById("mobileMenu").classList.add("hidden");
+        }, 300);
+        document.getElementById("overlay").classList.add("hidden");
+    }
+    
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('loginForm').addEventListener('submit', function (e) {
         e.preventDefault();
