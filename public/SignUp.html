@@ -249,22 +249,27 @@
 
     // form
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-            const user = {
-                username: username,
-                password: password
-            };
+        let users = JSON.parse(localStorage.getItem('users')) || [];
 
-            localStorage.setItem('user', JSON.stringify(user));
-            alert("Account created successfully! Please log in.");
-            window.location.href = "Login.html";
-        });
+        const existingUser = users.find(user => user.username === username);
+        if (existingUser) {
+            alert('This username already exists!');
+            return;
+        }
+
+        users.push({ username, password });
+        localStorage.setItem('users', JSON.stringify(users));
+
+        alert("Account created successfully! Please log in.");
+        window.location.href = "Login.html";
     });
+});
 </script>
 </body>
     
