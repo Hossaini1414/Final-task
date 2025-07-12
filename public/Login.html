@@ -250,7 +250,7 @@
         const username = document.getElementById('loginUsername').value;
         const password = document.getElementById('loginPassword').value;
 
-        // گرفتن اطلاعات ذخیره شده از localStorage
+        // get details from localStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
 
         if (storedUser && username === storedUser.username && password === storedUser.password) {
