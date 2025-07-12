@@ -243,19 +243,24 @@
             document.getElementById("overlay").classList.add("hidden");
         }
         // form
-        
-        document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            if (username === StoredUser.username && password === StoredUser.password) {
-                localStorage.setItem("loggedIn", "true");
-                window.location.href = "Post.html";
-            } else {
-                alert('Invalid! please try again')
-            }
-        })
-    </script>
+    
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        // گرفتن اطلاعات ذخیره شده از localStorage
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+
+        if (storedUser && username === storedUser.username && password === storedUser.password) {
+            localStorage.setItem("loggedIn", "true");
+            window.location.href = "Post.html";
+        } else {
+            alert('Invalid! please try again');
+        }
+    });
+</script>
 
 </body>
 
