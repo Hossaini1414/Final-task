@@ -166,21 +166,22 @@
           Fill out the form below and we1'll get back to you as soon as possible.
         </p>
         <form id="loginForm" method="post" action="https://formsubmit.co/khodabakhsh.hosseine.20@gmail.com">
+          <!-- Hidden options -->
           <input type="hidden" name="_captcha" value="false">
-          <!--after send massage user go here-->
           <input type="hidden" name="_next" value="thankYou.html">
+          <input type="hidden" name="_template" value="table">
 
           <label class="block text-lg font-medium text-gray-700 mb-1"><i class="fas fa-user text-black"> </i> User
             Name</label>
-          <input type="text" placeholder="user name...." required
+          <input type="text" placeholder="user name...." required name="username"
             class="w-full bg-transparent  bg-stone-50 px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-500" />
           <label class="block text-lg font-medium text-gray-700 mb-1"><i class="fas fa-envelope text-black"> </i>
             Email</label>
-          <input type="email" i placeholder="email....." required
+          <input type="email" i placeholder="email....." required name="email"
             class="w-full bg-transparent  bg-stone-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-500" />
           <label class="block text-lg font-medium text-gray-700 mb-1 my-3"><i class="fas fa-question text-black"> </i>
             Your questions</label>
-          <textarea placeholder="Write your questions or idea..." required
+          <textarea placeholder="Write your questions or idea..." required name="massage"
             class="w-full h-32 p-3  border border-gray-300 bg-stone-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
 
           <br>
@@ -188,7 +189,7 @@
             <button type="submit" class="bg-cyan-300  rounded-lg hover:bg-cyan-400 p-2  hover: scale-105">
               Send
             </button>
-            <button type="submit" class="bg-gray-400  rounded-lg hover:bg-gray-500 p-2 hover: scale-105">
+            <button type="reset" class="bg-gray-400  rounded-lg hover:bg-gray-500 p-2 hover: scale-105">
               Clear
             </button>
           </div>
