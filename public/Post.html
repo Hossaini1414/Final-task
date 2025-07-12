@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>posts</title>
     <link rel="stylesheet" href="assets/css/build/tailwind.css">
     <!--Font Awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -238,31 +238,30 @@
             document.getElementById("overlay").classList.add("hidden");
         }
 
-        const UserName = JSON.parse(localStorage.getItem("user"))?.username;
-        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-        if (!isLoggedIn || !UserName) {
-            alert("please login first");
-            window.location.href = "Login.html";
-        }
-        const postFormWrapper = document.getElementById("postFormWrapper");
-        const toggleFormBtn = document.getElementById("toggleFormBtn");
-        const postForm = document.getElementById("postForm");
-        const postsContainer = document.getElementById("postsContainer");
-        const imageInput = document.getElementById("postImage");
-        const customFileInput = document.getElementById("customFileInput");
-        const imagePreview = document.getElementById("imagePreview");
-        const uploadText = document.getElementById("uploadText");
-        const user = JSON.parse(localStorage.getItem("user")) || { username: "Unknown" };
-        const username = user.username;
+        const loggedInUser = localStorage.getItem("loggedInUser");
+const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
-        let posts = JSON.parse(localStorage.getItem("posts") || "[]");
-        let editingPostId = null;
+if (!isLoggedIn || !loggedInUser) {
+    alert("please login first");
+    window.location.href = "Login.html";
+}
 
-        // toggle form
-        toggleFormBtn.addEventListener("click", () => {
-            postFormWrapper.classList.toggle("hidden");
-        });
+const username = loggedInUser;
 
+const postFormWrapper = document.getElementById("postFormWrapper");
+const toggleFormBtn = document.getElementById("toggleFormBtn");
+const postForm = document.getElementById("postForm");
+const postsContainer = document.getElementById("postsContainer");
+const imageInput = document.getElementById("postImage");
+const customFileInput = document.getElementById("customFileInput");
+const imagePreview = document.getElementById("imagePreview");
+const uploadText = document.getElementById("uploadText")
+let editingPostId = null;
+
+// toggle form
+toggleFormBtn.addEventListener("click", () => {
+    postFormWrapper.classList.toggle("hidden");
+});
         //  show image in post form
         customFileInput.addEventListener("click", () => imageInput.click());
         imageInput.addEventListener("change", () => {
@@ -386,14 +385,6 @@
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
         });
-
-
-
-
-
-
-
-
     </script>
 
 </body>
