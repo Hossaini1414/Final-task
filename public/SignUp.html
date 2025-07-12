@@ -232,40 +232,39 @@
     </footer>
 
 
-    <script>
+<script>
+    // mobile menu
+    function openMenu() {
+        document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
+        document.getElementById("overlay").classList.remove("hidden");
+    }
 
-        // mobile menu
+    function closeMenu() {
+        document.getElementById("mobileMenu").classList.add("-translate-x-full");
+        setTimeout(() => {
+            document.getElementById("mobileMenu").classList.add("hidden");
+        }, 300);
+        document.getElementById("overlay").classList.add("hidden");
+    }
 
-        function openMenu() {
-            document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
-            document.getElementById("overlay").classList.remove("hidden");
-        }
+    // form
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        function closeMenu() {
-            document.getElementById("mobileMenu").classList.add("-translate-x-full");
-            setTimeout(() => {
-                document.getElemuentById("mobileMenu").classList.add("hidden");
-            }, 300);
-            document.getElementById("overlay").classList.add("hidden");
-        }
-    
-// form
-  document.getElementById('signupForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-      
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-    const user = {
-      username: username,
-      password: password
-    };
+            const user = {
+                username: username,
+                password: password
+            };
 
-    
-    localStorage.setItem('user', JSON.stringify(user));
-    alert("Account created successfully! Please log in.");
-    window.location.href = "Login.html";
-  });
+            localStorage.setItem('user', JSON.stringify(user));
+            alert("Account created successfully! Please log in.");
+            window.location.href = "Login.html";
+        });
+    });
 </script>
 </body>
     
