@@ -151,7 +151,7 @@
                 class="p-8   bg-gradient-to-t from-stone-400/80 via-stone-300/95 to-stone-400/80 rounded-xl md:rounded-l-2xl shadow-2xl  w-full h-full  overflow-hidden pt-10">
                 <h1 class=" text-2xl font-bold font-font3 text-center text-black">Login & Start Your Journey
                 </h1>
-                <form id="loginForm" method="get">
+                <form id="loginForm" method="POST">
                     <p class="text-center text-md text-gray-700 mb-6">Please enter your details to login</p>
                     <label class="block text-lg font-medium text-gray-700 mb-1"><i class="fas fa-user text-black"> </i>
                         User Name</label>
@@ -226,46 +226,29 @@
     </footer>
 
 
-    <script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-        // mobile menu
+        const username = document.getElementById('loginUsername').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
 
-        function openMenu() {
-            document.getElementById("mobileMenu").classList.remove("hidden", "-translate-x-full");
-            document.getElementById("overlay").classList.remove("hidden");
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+        const matchedUser = users.find(user => user.username === username && user.password === password);
+
+        if (matchedUser) {
+            alert("Login successful!");
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("loggedInUser", username);
+            window.location.href = "Post.html"; // یا هر صفحه‌ای که می‌خواهید وارد شود
+        } else {
+            alert('Username or password is incorrect!');
         }
-
-        function closeMenu() {
-            document.getElementById("mobileMenu").classList.add("-translate-x-full");
-            setTimeout(() => {
-                document.getElemuentById("mobileMenu").classList.add("hidden");
-            }, 300);
-            document.getElementById("overlay").classList.add("hidden");
-        }
-        // form
-
-document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const username = document.getElementById('loginUsername').value.trim();
-    const password = document.getElementById('loginPassword').value.trim();
-
-    // get list of users
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    
-    const matchedUser = users.find(user => user.username === username && user.password === password);
-
-    if (matchedUser) {
-        localStorage.setItem("loggedIn", "true");
-        localStorage.setItem("loggedInUser", username);
-        window.location.href = "Post.html";
-    } else {
-        alert('Invalid credentials! Please try again.');
-    }
+    });
 });
-    </script>
-
+</script>
 </body>
 
 </html>
